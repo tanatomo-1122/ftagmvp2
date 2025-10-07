@@ -73,7 +73,7 @@ function ListPageContent() {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-2xl mx-auto px-4">
         <div className="bg-white rounded-lg shadow-md p-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-6">商品を出品する</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-6">List an item</h1>
           
           {error && (
             <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-md">
@@ -85,7 +85,7 @@ function ListPageContent() {
             {/* 商品名 */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                商品名 <span className="text-red-500">*</span>
+                Item name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -96,15 +96,15 @@ function ListPageContent() {
                 required
                 maxLength={50}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="例: 牛乳"
+                placeholder="e.g., Milk"
               />
-              <p className="text-xs text-gray-500 mt-1">{formData.name.length}/50文字</p>
+              <p className="text-xs text-gray-500 mt-1">{formData.name.length}/50 characters</p>
             </div>
 
             {/* 数量 */}
             <div>
               <label htmlFor="qty" className="block text-sm font-medium text-gray-700 mb-2">
-                数量・目安
+                Quantity (approx.)
               </label>
               <input
                 type="text"
@@ -113,14 +113,14 @@ function ListPageContent() {
                 value={formData.qty}
                 onChange={handleInputChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="例: 1L、3個、1パック"
+                placeholder="e.g., 1 L, 3 pcs, 1 pack"
               />
             </div>
 
             {/* 期限 */}
             <div>
               <label htmlFor="exp" className="block text-sm font-medium text-gray-700 mb-2">
-                消費・賞味期限
+                Use-by / Best-before date
               </label>
               <input
                 type="date"
@@ -135,7 +135,7 @@ function ListPageContent() {
             {/* メモ */}
             <div>
               <label htmlFor="note" className="block text-sm font-medium text-gray-700 mb-2">
-                メモ・ひと言
+                Notes / Short message
               </label>
               <textarea
                 id="note"
@@ -145,15 +145,15 @@ function ListPageContent() {
                 maxLength={140}
                 rows={3}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="例: 冷蔵庫で保管中、新鮮です"
+                placeholder="e.g., Stored in the fridge; fresh"
               />
-              <p className="text-xs text-gray-500 mt-1">{formData.note.length}/140文字</p>
+              <p className="text-xs text-gray-500 mt-1">{formData.note.length}/140 characters</p>
             </div>
 
             {/* 連絡方法 */}
             <div>
               <label htmlFor="contact" className="block text-sm font-medium text-gray-700 mb-2">
-                受け渡し連絡方法
+                Contact for handover
               </label>
               <input
                 type="text"
@@ -162,9 +162,9 @@ function ListPageContent() {
                 value={formData.contact}
                 onChange={handleInputChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="例: 田中さん、@tanaka123、tanaka@example.com"
+                placeholder="e.g., Tanaka, @tanaka123, tanaka@example.com"
               />
-              <p className="text-xs text-gray-500 mt-1">ニックネーム、SNSハンドル、または一時的な連絡先</p>
+              <p className="text-xs text-gray-500 mt-1">Nickname, social handle, or a temporary contact</p>
             </div>
 
             {/* 出品ボタン */}
@@ -174,7 +174,7 @@ function ListPageContent() {
                 disabled={isSubmitting || !formData.name.trim()}
                 className="w-full bg-blue-600 text-white py-3 px-4 rounded-md font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? '出品中...' : '出品する'}
+                {isSubmitting ? 'Listing...' : 'List item'}
               </button>
             </div>
           </form>
@@ -184,7 +184,7 @@ function ListPageContent() {
               onClick={() => router.push('/board')}
               className="text-blue-600 hover:text-blue-800 text-sm"
             >
-              掲示板を見る →
+              View listings →
             </button>
           </div>
         </div>
